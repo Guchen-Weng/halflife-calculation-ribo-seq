@@ -1,13 +1,13 @@
 # ============================================================
 # Script:    annotate_reads.R
-# Pipeline:  Step 05 - Monosome (Ribosome Profiling)
+# Pipeline:  Step 04 - Monosome (Ribosome Profiling)
 # Purpose:   Annotate BED reads to CDS regions using GFF3 annotation.
 #            For each read overlapping a CDS, output the CDS ID,
 #            strand, 5' and 3' coordinates (orientation-aware), read
 #            length, distance to CDS ends, and aggregated read counts.
 # Input:     reference/Escherichia_coli_str_k_12_substr_mg1655_gca_000005845.ASM584v2.62.chromosome.Chromosome.gff3
-#            BED files from 05_monosome/genome-aligned-bam/*.bed
-# Output:    05_monosome/genome-aligned-bam/<sample>_cds_annotation.csv
+#            BED files from 04_monosome/genome-aligned-bam/*.bed
+# Output:    04_monosome/genome-aligned-bam/<sample>_cds_annotation.csv
 # Author:    Guchen-Weng
 # Date:      2025-01
 # ============================================================
@@ -22,8 +22,8 @@ suppressPackageStartupMessages({
 # ---- Paths ----
 # Run from Riboseq_analysis/ root directory
 gff_file <- "reference/Escherichia_coli_str_k_12_substr_mg1655_gca_000005845.ASM584v2.62.chromosome.Chromosome.gff3"
-bed_dir <- "05_monosome/genome-aligned-bam"
-output_dir <- "05_monosome/genome-aligned-bam"
+bed_dir <- "04_monosome/genome-aligned-bam"
+output_dir <- "04_monosome/genome-aligned-bam"
 
 # ---- 1. Read and Process GFF ----
 message("Reading GFF file...")

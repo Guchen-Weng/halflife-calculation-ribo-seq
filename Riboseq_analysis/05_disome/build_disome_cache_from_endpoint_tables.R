@@ -12,7 +12,7 @@
 #            length, and endpoint window. Therefore dz = WT - EV
 #            describes a DIFFERENCE IN LOCAL SHAPE of endpoint
 #            distribution, not an absolute coverage difference.
-# Input:     05_monosome/genome-aligned-bam/*_cds_annotation.csv
+# Input:     04_monosome/genome-aligned-bam/*_cds_annotation.csv
 #            reference/Escherichia_coli_...Chromosome.gff3
 #            reference/Escherichia_coli_...dna.chromosome.Chromosome.fa
 # Output:    cache_stop_and_motifs_hm_dz.rds
@@ -38,7 +38,7 @@ genome_fasta <- "reference/Escherichia_coli_str_k_12_substr_mg1655_gca_000005845
 sample_sheet <- data.table(
   sample = c("EV_1", "EV_2", "WT_1", "WT_2"),
   group  = c("EV",   "EV",   "WT",   "WT"),
-  file   = file.path("05_monosome", "genome-aligned-bam", c(
+  file   = file.path("04_monosome", "genome-aligned-bam", c(
     "EV_1_cds_annotation.csv",
     "EV_2_cds_annotation.csv",
     "WT_1_cds_annotation.csv",
