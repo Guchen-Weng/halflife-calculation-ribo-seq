@@ -2,21 +2,6 @@
 
 RNA-seq half-life and Ribo-seq analysis pipelines for *E. coli* K-12 MG1655 (EV vs WT).
 
-## Project structure
-
-```
-.
-├── Halflife_analysis/     # RNA-seq: half-life estimation + DESeq2 + GO
-│   ├── 00_fastp.bash → 01-alignment-double.bash → 02-Readcount.py
-│   ├── 03_Normalization/ → 04_halflife/ → deseq/
-│   └── reference/
-├── Riboseq_analysis/      # Ribo-seq: monosome pause scores + disome
-│   ├── 00_fastp.bash → run_filter.sh → 02_alignment.sh
-│   ├── 03_TPM/ → 04_monosome/ → 05_disome/
-│   └── reference/
-└── .gitignore
-```
-
 ## Environment
 
 ### Conda (recommended)
@@ -66,6 +51,12 @@ Run from `Halflife_analysis/`:
 6. `Rscript 04_halflife/plot_half_life_*.R` — Visualization
 7. `cd deseq/ && Rscript run_deseq2.R` — Differential expression + GO
 
+### Reference index
+
+Before alignment, build the Bowtie2 genome index from each pipeline's `reference/` directory:
+
+```bash
+cd reference/ && bash build_index.sh
 ### Ribo-seq pipeline
 
 Run from `Riboseq_analysis/`:
@@ -81,16 +72,6 @@ Run from `Riboseq_analysis/`:
 9. `Rscript 05_disome/build_disome_cache_from_endpoint_tables.R` — Disome cache
 10. `Rscript 05_disome/plot_disome_schemeA_heatmaps.R` — Disome heatmaps
 
-### Reference index
 
-Before alignment, build the Bowtie2 genome index from each pipeline's `reference/` directory:
-
-```bash
-cd reference/ && bash build_index.sh
 ```
 
-## Notes
-
-- Reference genome: *E. coli* K-12 MG1655 (Ensembl release 62).
-- Both pipelines share upstream QC and TPM steps; run once per dataset.
-- Generated data (CSV, BAM, PDF, PNG) are excluded by `.gitignore`.
