@@ -1,0 +1,68 @@
+# ===== Data files =====
+*.csv
+*.tsv
+*.Rdump
+
+# ===== Output figures =====
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# ===== R temporary files =====
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# ===== Python temporary files =====
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# ===== Alignment / genomics files =====
+*.bam
+*.bai
+*.sam
+*.bw
+*.bed
+*.bigwig
+*.fastq
+*.fq
+*.fasta
+*.fa
+*.gtf
+*.gff
+*.gff3
+*.gz
+*.bt2
+*.ndb
+*.nhr
+*.nin
+*.njs
+*.nog
+*.nos
+*.not
+*.nsq
+*.ntf
+*.nto
+*.fai
+
+# Exceptions: keep reference source files
+!reference/*.fa
+!reference/*.gff3
+!reference/*.gtf
+
+# ===== Archives =====
+*.zip
+*.tar
+*.tar.gz
+
+# ===== Log files =====
+*.log
+
+# ===== System files =====
+.DS_Store
+Thumbs.db
