@@ -1,9 +1,9 @@
 #!/usr/bin/env Rscript
 # ============================================================
-# Script:    02_plot_pause_scores.R
-# Pipeline:  Monosome Pause Score Visualization
+# Script:    05_plot_pause_scores.R
+# Pipeline:  Step 04 - Monosome (Ribosome Profiling)
 # Purpose:   Plot EV vs WT codon pause scores (A/P/E sites) from
-#            the output of 01_pause_score_calculation.R.
+#            the output of 04_pause_score_calculation.R.
 #            Dots = group mean, error bars = SE across replicates.
 # Input:     PauseScore_fixedStrand_len26-32/
 #              *_pause_scores_codon_A_P_E.csv
@@ -22,16 +22,17 @@ suppressPackageStartupMessages({
 # =====================================================================
 # 0) Input files
 # =====================================================================
-workdir <- "PauseScore_fixedStrand_len26-32"
-if (!dir.exists(workdir)) stop("Input directory not found: ", workdir)
-setwd(workdir)
+# Run from Riboseq_analysis/ root directory
+input_dir  <- "04_monosome/PauseScore_fixedStrand_len26-32"
+output_dir <- "04_monosome/PauseScore_fixedStrand_len26-32"
+if (!dir.exists(input_dir)) stop("Input directory not found: ", input_dir)
 
-files <- c(
+files <- file.path(input_dir, c(
   "EV_1_cds_annotation_with_PEA_offset15_fixedStrand_pause_scores_codon_A_P_E.csv",
   "EV_2_cds_annotation_with_PEA_offset15_fixedStrand_pause_scores_codon_A_P_E.csv",
   "WT_1_cds_annotation_with_PEA_offset15_fixedStrand_pause_scores_codon_A_P_E.csv",
   "WT_2_cds_annotation_with_PEA_offset15_fixedStrand_pause_scores_codon_A_P_E.csv"
-)
+))
 stopifnot(all(file.exists(files)))
 
 # =====================================================================
@@ -137,8 +138,8 @@ print(p)
 # =====================================================================
 # 7) Save outputs
 # =====================================================================
-ggsave(paste0(out_prefix, ".png"), p, width = 16, height = 6.5, dpi = 300)
-ggsave(paste0(out_prefix, ".pdf"), p, width = 16, height = 6.5)
-fwrite(sum_dt, paste0(out_prefix, "_summary.csv"))
+ggsave(file.path(output_dir, paste0(out_prefix, ".png")), p, width = 16, height = 6.5, dpi = 300)
+ggsave(file.path(output_dir, paste0(out_prefix, ".pdf")), p, width = 16, height = 6.5)
+fwrite(sum_dt, file.path(output_dir, paste0(out_prefix, "_summary.csv")))
 
-message("Done. Wrote: ", out_prefix, ".png/.pdf and summary csv")
+message("Done. Wrote: ", out_prefix, ".png/.pdf and summary csv to ", output_dir)

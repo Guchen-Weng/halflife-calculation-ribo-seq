@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 # ============================================================
-# Script:    01_pause_score_calculation.R
-# Pipeline:  Monosome Pause Score Analysis
+# Script:    04_pause_score_calculation.R
+# Pipeline:  Step 04 - Monosome (Ribosome Profiling)
 # Purpose:   Calculate codon-level pause scores from CDS-annotated
 #            read tables with pre-computed P/A/E-site positions
 #            (offset 15). Computes per-codon, per-amino-acid, and
@@ -29,19 +29,20 @@ suppressPackageStartupMessages({
 # =====================================================================
 # 0) Paths and input files
 # =====================================================================
-workdir <- "."
-setwd(workdir)
-message("WD = ", getwd())
+# Run from Riboseq_analysis/ root directory
+input_dir  <- "04_monosome/genome-aligned-bam"
+output_dir <- "04_monosome/PauseScore_fixedStrand_len26-32"
+dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
-files <- c(
+files <- file.path(input_dir, c(
   "WT_1_cds_annotation_with_PEA_offset15_fixedStrand.csv",
   "WT_2_cds_annotation_with_PEA_offset15_fixedStrand.csv",
   "EV_1_cds_annotation_with_PEA_offset15_fixedStrand.csv",
   "EV_2_cds_annotation_with_PEA_offset15_fixedStrand.csv"
-)
+))
 stopifnot(all(file.exists(files)))
 
-cds_fa <- "../reference/Escherichia_coli_str_k_12_substr_mg1655_gca_000005845.ASM584v2.cds.all.fa"
+cds_fa <- "reference/Escherichia_coli_str_k_12_substr_mg1655_gca_000005845.ASM584v2.cds.all.fa"
 stopifnot(file.exists(cds_fa))
 
 # =====================================================================
@@ -219,22 +220,19 @@ calc_pause_one_sample <- function(f) {
 # =====================================================================
 # 4) Process all four samples and write output
 # =====================================================================
-out_dir <- "PauseScore_fixedStrand_len26-32"
-dir.create(out_dir, showWarnings = FALSE)
-
 for (f in files) {
   res <- calc_pause_one_sample(f)
 
   fwrite(res$site_codon_nt_table,
-         file.path(out_dir, paste0(res$sample, "_site_codon_nt_table.csv")))
+         file.path(output_dir, paste0(res$sample, "_site_codon_nt_table.csv")))
   fwrite(res$codon_pause,
-         file.path(out_dir, paste0(res$sample, "_pause_scores_codon_A_P_E.csv")))
+         file.path(output_dir, paste0(res$sample, "_pause_scores_codon_A_P_E.csv")))
   fwrite(res$aa_pause,
-         file.path(out_dir, paste0(res$sample, "_pause_scores_aa_A_P_E.csv")))
+         file.path(output_dir, paste0(res$sample, "_pause_scores_aa_A_P_E.csv")))
   fwrite(res$asym,
-         file.path(out_dir, paste0(res$sample, "_asymmetry_scores_gene.csv")))
+         file.path(output_dir, paste0(res$sample, "_asymmetry_scores_gene.csv")))
 
   message("Finished: ", res$sample)
 }
 
-message("All done. Output in: ", file.path(getwd(), out_dir))
+message("All done. Output in: ", output_dir)
