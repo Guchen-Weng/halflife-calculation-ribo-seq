@@ -11,7 +11,6 @@
 # Output:    04_monosome/genome-aligned-bam/<sample>_cds_annotation_with_PEA_offset15_fixedStrand.csv
 # Parameters: offset = 15 nt (3' end -> P-site), step = 3 nt (codon)
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
