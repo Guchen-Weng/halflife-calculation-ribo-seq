@@ -7,7 +7,6 @@
 # Input:     ../../half_decay/half_life_results.csv
 # Output:    ../output/half_life_violin_annotated_log2.pdf
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 library(ggplot2)
