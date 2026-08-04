@@ -11,7 +11,6 @@
 #            04_monosome/genome-aligned-bam/reads_summary_len26-32.csv
 # Parameters: read length 26-32 nt
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
