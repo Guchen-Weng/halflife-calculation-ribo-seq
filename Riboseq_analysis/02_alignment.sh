@@ -8,7 +8,6 @@
 # Reference: reference/Ecoli (Bowtie2 index)
 # Output:    ../02-alignment/<sample>.sorted.bam (.bai)
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 # Prerequisite: conda activate EcoliRNA
 
