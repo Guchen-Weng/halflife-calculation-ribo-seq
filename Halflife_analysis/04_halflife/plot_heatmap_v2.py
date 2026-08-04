@@ -9,7 +9,6 @@
 # Output:    ../../03-Visualization/WT_top50_halflife_diff_heatmap.pdf
 #            ../../03-Visualization/EV_top50_halflife_diff_heatmap.pdf
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 import pandas as pd
