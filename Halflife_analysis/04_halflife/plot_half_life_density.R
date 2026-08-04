@@ -6,7 +6,6 @@
 # Input:     ../../half_decay/half_life_results.csv
 # Output:    ../output/half_life_density.pdf
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 library(ggplot2)
