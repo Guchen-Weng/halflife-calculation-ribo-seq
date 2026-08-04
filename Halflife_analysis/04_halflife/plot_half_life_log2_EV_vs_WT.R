@@ -6,7 +6,6 @@
 # Input:     ../../half_decay/half_life_results.csv
 # Output:    ../output/half_life_violin_log2_EV_vs_WT.pdf
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 library(ggplot2)
