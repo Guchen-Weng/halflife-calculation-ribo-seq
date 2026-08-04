@@ -12,7 +12,6 @@
 #              *_schemeA_avg_plus_heatmap_36_60nt.pdf / .png
 #              ALL_targets_average_dZ_36_60nt.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
