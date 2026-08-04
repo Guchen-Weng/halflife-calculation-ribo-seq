@@ -10,7 +10,6 @@
 # Output:    codon_pause_EV_vs_WT_APE_minRPN0.1.png/.pdf
 #            codon_pause_EV_vs_WT_APE_minRPN0.1_summary.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
