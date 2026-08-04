@@ -17,7 +17,6 @@
 #            reference/Escherichia_coli_...dna.chromosome.Chromosome.fa
 # Output:    cache_stop_and_motifs_hm_dz.rds
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
