@@ -8,7 +8,6 @@
 # Input:     deseq2_results_0min.csv
 # Output:    GO_Analysis_ClusterProfiler/GO_Enrichment_Combined.pdf/.png
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
