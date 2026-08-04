@@ -7,7 +7,6 @@
 # Input:     ../../02-Readcount/merged_gene_counts_final.csv
 # Output:    sample_correlation_heatmap.pdf / .png
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
