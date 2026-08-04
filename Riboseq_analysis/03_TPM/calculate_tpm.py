@@ -6,7 +6,6 @@
 # Input:     03_TPM/counts.txt (featureCounts output)
 # Output:    03_TPM/tpm_counts.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 import pandas as pd
