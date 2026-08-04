@@ -8,7 +8,6 @@
 #            ../02-Readcount/merged_gene_counts_with_annotations_ncRNA.csv
 # Output:    ../02-Readcount/merged_gene_counts_final.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 import pandas as pd
