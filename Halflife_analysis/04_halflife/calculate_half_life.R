@@ -8,7 +8,6 @@
 # Input:     ../../UCSC_db/gene_tpm_with_motifs.csv
 # Output:    ../../half_decay/half_life_results.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 # ---- Paths ----
