@@ -10,7 +10,6 @@
 # Output:    ../01-alignment/<sample>.sorted.bam (.bai)
 #            ../01-alignment/logs/<sample>_bowtie2.log
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 # ---- Paths ----
