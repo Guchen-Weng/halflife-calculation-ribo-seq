@@ -1,0 +1,54 @@
+name: EcoliRNA
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # ===== Core =====
+  - python=3.10
+  - r-base>=4.2
+
+  # ===== Bioinformatics CLI tools (bioconda) =====
+  - fastp>=0.23          # Raw read QC & trimming
+  - bowtie2>=2.5         # Genome alignment & tRNA/rRNA filtering
+  - samtools>=1.17       # SAM/BAM processing, sorting, indexing, idxstats
+  - subread>=2.0         # featureCounts gene quantification
+  - bedtools>=2.30       # BED operations (bamtobed etc.)
+  - deeptools>=3.5       # bamCoverage → BigWig for disome tracks
+
+  # ===== Python (conda-forge) =====
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - pysam                 # BAM parsing in ribo-seq / disome / TE scripts
+
+  # ===== R – CRAN (conda-forge) =====
+  - r-biocmanager         # BiocManager::install bridge
+  - r-cowplot
+  - r-data.table
+  - r-dplyr
+  - r-ggplot2
+  - r-ggpubr
+  - r-ggrepel
+  - r-ggsignif
+  - r-patchwork
+  - r-pheatmap
+  - r-rcolorbrewer
+  - r-scales
+  - r-stringr
+  - r-tibble
+  - r-tidyr
+  - r-tidyverse           # meta-package (explicitly library(tidyverse))
+
+  # ===== R – Bioconductor (conda-forge) =====
+  - bioconductor-deseq2
+  - bioconductor-clusterprofiler
+  - bioconductor-enrichplot
+  - bioconductor-org.eck12.eg.db
+  - bioconductor-genomicranges
+  - bioconductor-rtracklayer
+  - bioconductor-biostrings
+  - bioconductor-ruvseq

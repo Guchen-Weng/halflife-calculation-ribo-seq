@@ -4,38 +4,21 @@ RNA-seq half-life and Ribo-seq analysis pipelines for *E. coli* K-12 MG1655 (EV 
 
 ## Environment
 
-### Conda (recommended)
+All dependencies (CLI tools, Python, R packages) are managed by conda — no pip, no manual `install.packages`.
 
 ```bash
-conda create -n EcoliRNA python=3.10
+# one-time setup
+conda env create -f environment.yml
+
+# activate before running any pipeline
 conda activate EcoliRNA
-conda install -c bioconda fastp bowtie2 samtools subread bedtools
-pip install pandas numpy seaborn matplotlib
 ```
 
-### R packages
+## Reference genome
 
-```r
-# CRAN
-install.packages(c("ggplot2", "dplyr", "tidyr", "ggrepel", "cowplot",
-                   "pheatmap", "RColorBrewer", "scales", "data.table",
-                   "patchwork", "stringr", "tibble"))
+**E. coli K-12 MG1655** — Ensembl Bacteria release 62 / ASM584v2 (GCA_000005845).
 
-# Bioconductor
-BiocManager::install(c("DESeq2", "clusterProfiler", "enrichplot",
-                       "org.EcK12.eg.db", "GenomicRanges", "rtracklayer",
-                       "Biostrings"))
-```
-
-### Tools
-
-| Tool | Purpose |
-|------|---------|
-| fastp ≥ 0.23 | Read QC |
-| Bowtie2 ≥ 2.5 | Alignment |
-| samtools ≥ 1.17 | SAM/BAM processing |
-| featureCounts | Gene quantification |
-| bedtools | BED operations |
+Reference files are tracked in git under `*/reference/`.
 
 ## Workflow
 
@@ -57,6 +40,8 @@ Before alignment, build the Bowtie2 genome index from each pipeline's `reference
 
 ```bash
 cd reference/ && bash build_index.sh
+```
+
 ### Ribo-seq pipeline
 
 Run from `Riboseq_analysis/`:
@@ -71,7 +56,4 @@ Run from `Riboseq_analysis/`:
 8. `Rscript 04_monosome/03_plot_pause_scores.R` — EV vs WT plots
 9. `Rscript 05_disome/build_disome_cache_from_endpoint_tables.R` — Disome cache
 10. `Rscript 05_disome/plot_disome_schemeA_heatmaps.R` — Disome heatmaps
-
-
-```
 
