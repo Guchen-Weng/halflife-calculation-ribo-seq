@@ -9,7 +9,6 @@
 # Output:    deseq2_results_0min.csv
 #            volcano_plot_0min.pdf / .png
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
