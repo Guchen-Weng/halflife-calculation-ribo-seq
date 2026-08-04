@@ -8,7 +8,6 @@
 #            ../output/tpm_log_data_long.csv
 #            ../output/tpm_log_matrix.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 library(ggplot2)
