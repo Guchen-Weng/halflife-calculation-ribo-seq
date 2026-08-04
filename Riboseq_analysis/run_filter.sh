@@ -9,7 +9,6 @@
 # Reference: reference/tRNA.fa, reference/rRNA.fa
 # Output:    ../01-filter/<sample>_clean_final.fastq.gz
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 # Prerequisite: conda activate EcoliRNA
 
