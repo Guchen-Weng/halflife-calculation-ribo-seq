@@ -8,7 +8,6 @@
 # Reference: reference/Escherichia_coli_...gtf
 # Output:    03_TPM/counts.txt, 03_TPM/tpm_counts.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 # Prerequisite: conda activate EcoliRNA
 
