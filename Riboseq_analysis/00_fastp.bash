@@ -10,7 +10,6 @@
 # Output:    ../00-QC/cleaned/<sample>_clean_R{1,2}.fastq.gz
 #            ../00-QC/fastp_reports/<sample>_fastp_report.{html,json}
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 # Prerequisite: conda activate EcoliRNA
 
