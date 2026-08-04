@@ -17,7 +17,6 @@
 # Parameters: read length 26-32, exclude first 27nt / last 12nt,
 #             gene-level min density 0.5 reads/nt
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 suppressPackageStartupMessages({
