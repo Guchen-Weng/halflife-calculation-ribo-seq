@@ -9,7 +9,6 @@
 #            BED files from 04_monosome/genome-aligned-bam/*.bed
 # Output:    04_monosome/genome-aligned-bam/<sample>_cds_annotation.csv
 # Author:    Guchen-Weng
-# Date:      2025-01
 # ============================================================
 
 # ---- Libraries ----
